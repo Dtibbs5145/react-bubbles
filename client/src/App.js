@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import ColorList from './components/ColorList';
+// import Bubbles from './components/Bubbles';
+// import BubblePage from './components/BubblePage';
 import Login from "./components/Login";
 import "./styles.scss";
 
@@ -9,7 +12,18 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Route exact path="/" component={Login} />
+        <ul>
+          <li>
+            <Link to='/colors'>🌈Colors🌈</Link>
+          </li>
+          <li>
+            <Link to='/login'>Login</Link>
+          </li>
+        </ul>
+        <Route exact path="/login" component={Login} />
+        {/* <Route path='/' component={BubblePage} /> */}
+        {/* <Route path='/' component={Bubbles} /> */}
+        {/* <Route path='/' component={ColorList} /> */}
         {/* 
           Build a PrivateRoute component that will 
           display BubblePage when you're authenticated 
